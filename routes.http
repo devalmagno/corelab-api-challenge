@@ -1,0 +1,23 @@
+post http://localhost:3333/api/notes/
+content-type: application/json
+
+{
+    "title": "Hoje em dia somos assim",
+    "description": "Lorem ipsum",
+    "color": "#D9D9D9",
+    "is_favorite": false
+}
+
+###
+get http://localhost:3333/api/notes/
+
+###
+put http://localhost:3333/api/notes/bcf5c0c8-be50-42b2-82ea-52ac05ff9e2d
+content-type: application/json
+
+{
+    "description": "É para atualizar apenas este"
+}
+
+###
+delete http://localhost:3333/api/notes/03b1e83f-e28c-4898-ae60-e596b0423fe8

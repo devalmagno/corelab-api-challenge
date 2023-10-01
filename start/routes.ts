@@ -20,4 +20,12 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/vehicles', 'VehiclesController.index');
+Route.group(() => {
+  Route.resource('/notes', 'NotesController').apiOnly()
+  // Available routes:
+  // GET | HEAD / api / notes ──────────────────── notes.index › NotesController.index
+  // POST / api / notes ──────────────────── notes.store › NotesController.store
+  // GET | HEAD / api / notes /: id ────────────────── notes.show › NotesController.show
+  // PUT | PATCH / api / notes /: id ────────────── notes.update › NotesController.update
+  // DELETE / api / notes /: id ──────────── notes.destroy › NotesController.destroy
+}).prefix('/api')
